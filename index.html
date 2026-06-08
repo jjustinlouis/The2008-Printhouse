@@ -17,9 +17,10 @@
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#merch" class="nav-link">Brand Merch</a></li>
+                <li><a href="#order" class="nav-link">Order</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">🛒 Cart</a></li>
             </ul>
             <button class="menu-toggle">☰</button>
         </div>
@@ -59,30 +60,66 @@
         </div>
     </section>
 
-    <!-- Brand Merch Section -->
-    <section id="merch" class="services">
+    <!-- Order Section -->
+    <section id="order" class="services order-section">
         <div class="container">
-            <h2>Brand Merch</h2>
+            <h2>Order</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="681364808_1586541473478537_3890769388810598459_n.jpg" alt="Product 1" class="merch-image">
-                    <h3>Premium Product 1</h3>
-                    <p>High-quality branded merchandise with full sublimation printing.</p>
+                    <a href="product1.html" class="order-link">
+                        <img src="681364808_1586541473478537_3890769388810598459_n.jpg" alt="Product 1" class="merch-image">
+                        <h3>Premium Product 1</h3>
+                        <p>Click to order</p>
+                    </a>
                 </div>
                 <div class="service-card">
-                    <img src="684405053_1586541476811870_2638230059534896612_n.jpg" alt="Product 2" class="merch-image">
-                    <h3>Premium Product 2</h3>
-                    <p>Durable and stylish products perfect for branding and giveaways.</p>
+                    <a href="product2.html" class="order-link">
+                        <img src="684405053_1586541476811870_2638230059534896612_n.jpg" alt="Product 2" class="merch-image">
+                        <h3>Premium Product 2</h3>
+                        <p>Click to order</p>
+                    </a>
                 </div>
                 <div class="service-card">
-                    <img src="684497734_1586541526811865_9006497004919776328_n.jpg" alt="Product 3" class="merch-image">
-                    <h3>Premium Product 3</h3>
-                    <p>Custom branded items with vibrant colors and lasting quality.</p>
+                    <a href="product3.html" class="order-link">
+                        <img src="684497734_1586541526811865_9006497004919776328_n.jpg" alt="Product 3" class="merch-image">
+                        <h3>Premium Product 3</h3>
+                        <p>Click to order</p>
+                    </a>
                 </div>
                 <div class="service-card">
-                    <img src="685694161_1586541480145203_5114949070574142775_n.jpg" alt="Product 4" class="merch-image">
-                    <h3>Premium Product 4</h3>
-                    <p>Exclusive merchandise solutions for your brand and events.</p>
+                    <a href="product4.html" class="order-link">
+                        <img src="685694161_1586541480145203_5114949070574142775_n.jpg" alt="Product 4" class="merch-image">
+                        <h3>Premium Product 4</h3>
+                        <p>Click to order</p>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <a href="product5.html" class="order-link">
+                        <img src="672159263_1574033428062675_7346448744247067726_n.jpg" alt="Product 5" class="merch-image">
+                        <h3>Premium Product 5</h3>
+                        <p>Click to order</p>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <a href="product6.html" class="order-link">
+                        <img src="672687754_1574033468062671_8124170740212282727_n.jpg" alt="Product 6" class="merch-image">
+                        <h3>Premium Product 6</h3>
+                        <p>Click to order</p>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <a href="product7.html" class="order-link">
+                        <img src="673424813_1573711998094818_4067966130015358829_n.jpg" alt="Product 7" class="merch-image">
+                        <h3>Premium Product 7</h3>
+                        <p>Click to order</p>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <a href="product8.html" class="order-link">
+                        <img src="673527427_1574033431396008_9127443850598844839_n.jpg" alt="Product 8" class="merch-image">
+                        <h3>Premium Product 8</h3>
+                        <p>Click to order</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -109,10 +146,11 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2 class="contact-title">GET IN TOUCH</h2>
             <form class="contact-form" action="https://formsubmit.co/jjustinlouis@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Contact Number" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 <input type="hidden" name="_captcha" value="false">
                 <button type="submit" class="cta-button">Send Message</button>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Product 4 - The2008 Printhouse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            color: #fff;
+        }
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-details h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .product-price {
+            font-size: 1.8rem;
+            color: #00ff00;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .product-field {
+            margin-bottom: 1.5rem;
+        }
+        .product-field label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .product-field select,
+        .product-field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .product-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-cart {
+            background: #007bff;
+            color: white;
+        }
+        .btn-cart:hover {
+            background: #0056b3;
+        }
+        .btn-buy {
+            background: #28a745;
+            color: white;
+        }
+        .btn-buy:hover {
+            background: #1e7e34;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .success-message {
+            display: none;
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <a href="index.html#order" class="back-link">← Back to Order</a>
+        
+        <div class="product-layout">
+            <div>
+                <img src="685694161_1586541480145203_5114949070574142775_n.jpg" alt="Product 4" class="product-image">
+            </div>
+            
+            <div class="product-details">
+                <h1>Premium Product 4</h1>
+                <div class="product-price">₱ 300.00</div>
+                
+                <div class="success-message" id="successMsg">✓ Added to cart!</div>
+                
+                <div class="product-field">
+                    <label>Size:</label>
+                    <select id="size">
+                        <option value="">Select Size</option>
+                        <option value="XS">Extra Small (XS)</option>
+                        <option value="S">Small (S)</option>
+                        <option value="M">Medium (M)</option>
+                        <option value="L">Large (L)</option>
+                        <option value="XL">Extra Large (XL)</option>
+                        <option value="XXL">2XL</option>
+                    </select>
+                </div>
+                
+                <div class="product-field">
+                    <label>Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1" max="100">
+                </div>
+                
+                <div class="product-field">
+                    <label>Design Color:</label>
+                    <select id="color">
+                        <option value="">Select Color</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Custom">Custom Color</option>
+                    </select>
+                </div>
+                
+                <div class="product-buttons">
+                    <button class="btn btn-cart" onclick="addToCart()">🛒 Add to Cart</button>
+                    <button class="btn btn-buy" onclick="buyNow()">💳 Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            const size = document.getElementById('size').value;
+            const quantity = document.getElementById('quantity').value;
+            const color = document.getElementById('color').value;
+            
+            if (!size || !color) {
+                alert('Please select Size and Color');
+                return;
+            }
+            
+            const product = {
+                id: 4,
+                name: 'Premium Product 4',
+                price: 300,
+                size: size,
+                quantity: quantity,
+                color: color,
+                image: '685694161_1586541480145203_5114949070574142775_n.jpg'
+            };
+            
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            document.getElementById('successMsg').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 2000);
+        }
+        
+        function buyNow() {
+            const size = document.getElementById('size').value;
+            const color = document.getElementById('color').value;
+            
+            if (!size || !color) {
+                alert('Please select Size and Color');
+                return;
+            }
+            
+            const quantity = document.getElementById('quantity').value;
+            window.location.href = `index.html#contact`;
+        }
+    </script>
+</body>
+</html>
